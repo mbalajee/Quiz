@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dsN-N9-AMw">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create quiz-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CreateQuizViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUj-Gn-Vaw">
+                                <rect key="frame" x="167" y="763.66666666666663" width="59.666666666666657" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                <connections>
+                                    <action selector="onClickNext" destination="BYZ-38-t0r" eventType="touchUpInside" id="2vR-ol-l29"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v1H-R6-fum">
+                                <rect key="frame" x="16" y="123" width="361" height="624.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuizQuestion" rowHeight="143" id="gAJ-nm-QWt" customClass="CreateQuizQuestionTableViewCell" customModule="Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="143"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gAJ-nm-QWt" id="hku-15-RwV">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="143"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fbh-BL-oBq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="143"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="fbh-BL-oBq" secondAttribute="bottom" id="CqS-1v-e2G"/>
+                                                <constraint firstItem="fbh-BL-oBq" firstAttribute="top" secondItem="hku-15-RwV" secondAttribute="top" id="OmX-Hl-wdG"/>
+                                                <constraint firstAttribute="trailing" secondItem="fbh-BL-oBq" secondAttribute="trailing" id="XSM-Jx-yln"/>
+                                                <constraint firstItem="fbh-BL-oBq" firstAttribute="leading" secondItem="hku-15-RwV" secondAttribute="leading" id="dac-OD-6Am"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textViewQuestion" destination="fbh-BL-oBq" id="sDo-Oh-kR8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationLevel="13" indentationWidth="10" reuseIdentifier="QuizChoice" rowHeight="84" id="t8W-iF-pga" customClass="CreateQuizChoiceTableViewCell" customModule="Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="193" width="361" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t8W-iF-pga" id="tT0-w6-csM">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYs-ht-6Jb">
+                                                    <rect key="frame" x="307" y="26.666666666666671" width="51" height="31"/>
+                                                </switch>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aJ8-Hl-m6R">
+                                                    <rect key="frame" x="10" y="0.0" width="287" height="84"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZYs-ht-6Jb" firstAttribute="leading" secondItem="aJ8-Hl-m6R" secondAttribute="trailing" constant="10" id="2lz-z6-7yV"/>
+                                                <constraint firstItem="aJ8-Hl-m6R" firstAttribute="top" secondItem="tT0-w6-csM" secondAttribute="top" id="MIF-Ip-yya"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZYs-ht-6Jb" secondAttribute="trailing" constant="5" id="Pff-3I-2eI"/>
+                                                <constraint firstItem="ZYs-ht-6Jb" firstAttribute="centerY" secondItem="tT0-w6-csM" secondAttribute="centerY" id="VxJ-4p-qEc"/>
+                                                <constraint firstAttribute="bottom" secondItem="aJ8-Hl-m6R" secondAttribute="bottom" id="agG-ot-tWP"/>
+                                                <constraint firstItem="aJ8-Hl-m6R" firstAttribute="leading" secondItem="tT0-w6-csM" secondAttribute="leading" constant="10" id="yge-xg-hIT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="switchAnswer" destination="ZYs-ht-6Jb" id="Y11-7J-VWX"/>
+                                            <outlet property="textViewChoice" destination="aJ8-Hl-m6R" id="rQf-Vm-R9l"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuizAdd" textLabel="PQH-kl-W8P" style="IBUITableViewCellStyleDefault" id="DoC-fr-vt3">
+                                        <rect key="frame" x="0.0" y="277" width="361" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DoC-fr-vt3" id="BMR-HR-NIl">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Add" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PQH-kl-W8P">
+                                                    <rect key="frame" x="20" y="0.0" width="321" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rUj-Gn-Vaw" firstAttribute="top" secondItem="v1H-R6-fum" secondAttribute="bottom" constant="16" id="4hV-Xj-jhU"/>
+                            <constraint firstItem="rUj-Gn-Vaw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="167" id="66v-J0-QND"/>
+                            <constraint firstItem="v1H-R6-fum" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="9uR-cv-Ht9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rUj-Gn-Vaw" secondAttribute="trailing" constant="166.33333333333334" id="VTo-ow-9z9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rUj-Gn-Vaw" secondAttribute="bottom" constant="20" id="fC5-X4-6n8"/>
+                            <constraint firstItem="v1H-R6-fum" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ksg-za-cpu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1H-R6-fum" secondAttribute="trailing" constant="16" id="uAG-hb-Wo5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create quiz" id="wkh-ZC-jY4">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="bq8-Mq-DdW">
+                            <connections>
+                                <action selector="onClickCreate:" destination="BYZ-38-t0r" id="4hj-in-KaD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableViewQuiz" destination="v1H-R6-fum" id="Kq6-JG-pXE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1339.6946564885495" y="-310.56338028169017"/>
+        </scene>
+        <!--Quizzes-->
+        <scene sceneID="OKF-vd-1bl">
+            <objects>
+                <viewController id="NNJ-bP-IQ0" customClass="QuizListViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5KT-4v-TbI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click + to create a new quiz." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbn-e5-qlL">
+                                <rect key="frame" x="89.666666666666686" y="450" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tR9-xi-hC1">
+                                <rect key="frame" x="16" y="123" width="354" height="695"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuizListCell" textLabel="PPc-ee-oX5" detailTextLabel="GGK-R3-3jm" style="IBUITableViewCellStyleSubtitle" id="qxK-9N-MDv">
+                                        <rect key="frame" x="0.0" y="50" width="354" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qxK-9N-MDv" id="lrY-jj-dPa">
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PPc-ee-oX5">
+                                                    <rect key="frame" x="20" y="6.0000000000000009" width="25" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GGK-R3-3jm">
+                                                    <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NNJ-bP-IQ0" id="8KC-vT-bj5"/>
+                                    <outlet property="delegate" destination="NNJ-bP-IQ0" id="kkr-uj-8ZF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hmr-Pd-dZ8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cbn-e5-qlL" firstAttribute="centerX" secondItem="hmr-Pd-dZ8" secondAttribute="centerX" id="6V7-Yr-nMl"/>
+                            <constraint firstItem="Cbn-e5-qlL" firstAttribute="centerY" secondItem="hmr-Pd-dZ8" secondAttribute="centerY" id="Ba7-Sb-kUh"/>
+                            <constraint firstItem="hmr-Pd-dZ8" firstAttribute="trailing" secondItem="tR9-xi-hC1" secondAttribute="trailing" constant="23" id="aP8-3Z-zUq"/>
+                            <constraint firstItem="tR9-xi-hC1" firstAttribute="top" secondItem="hmr-Pd-dZ8" secondAttribute="top" constant="20" id="dGO-IM-HtW"/>
+                            <constraint firstItem="hmr-Pd-dZ8" firstAttribute="bottom" secondItem="tR9-xi-hC1" secondAttribute="bottom" id="oDk-S5-UDb"/>
+                            <constraint firstItem="tR9-xi-hC1" firstAttribute="leading" secondItem="hmr-Pd-dZ8" secondAttribute="leading" constant="16" id="v3I-O1-Ovr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quizzes" id="f8e-Ul-cBQ">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="wY9-nm-4na">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="CreateQuiz" id="0YB-mF-Xid"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="labelEmptyList" destination="Cbn-e5-qlL" id="QT1-Ko-ItP"/>
+                        <outlet property="tableViewQuiz" destination="tR9-xi-hC1" id="VuF-ot-H6f"/>
+                        <segue destination="iIA-GS-N7A" kind="show" identifier="PlayQuiz" id="IUc-Cn-6PM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nHS-N0-kW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="505" y="-50"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yr7-VP-5LF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dsN-N9-AMw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ufb-fO-xdP">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NNJ-bP-IQ0" kind="relationship" relationship="rootViewController" id="jYn-Mh-Xfd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ufy-fr-iCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-352" y="-50"/>
+        </scene>
+        <!--Play Quiz View Controller-->
+        <scene sceneID="jZQ-7Z-7zf">
+            <objects>
+                <viewController id="iIA-GS-N7A" customClass="PlayQuizViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c3h-Hz-08s">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zy6-FT-2Cg">
+                                <rect key="frame" x="16" y="123" width="361" height="618"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuizQuestion" rowHeight="143" id="PsH-KV-KnF" customClass="CreateQuizQuestionTableViewCell" customModule="Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="143"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PsH-KV-KnF" id="ujl-Er-QIH">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="143"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WpD-IP-Pvd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="143"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="WpD-IP-Pvd" secondAttribute="trailing" id="B3h-Jq-aDc"/>
+                                                <constraint firstAttribute="bottom" secondItem="WpD-IP-Pvd" secondAttribute="bottom" id="Rms-a0-cCJ"/>
+                                                <constraint firstItem="WpD-IP-Pvd" firstAttribute="top" secondItem="ujl-Er-QIH" secondAttribute="top" id="X5X-5S-9Rs"/>
+                                                <constraint firstItem="WpD-IP-Pvd" firstAttribute="leading" secondItem="ujl-Er-QIH" secondAttribute="leading" id="wuY-Kv-KYn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textViewQuestion" destination="WpD-IP-Pvd" id="2Vs-5E-l5x"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationLevel="13" indentationWidth="10" reuseIdentifier="QuizChoice" rowHeight="84" id="gmH-ZS-Als" customClass="CreateQuizChoiceTableViewCell" customModule="Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="193" width="361" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gmH-ZS-Als" id="jl5-7f-kap">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hg6-X4-2gc">
+                                                    <rect key="frame" x="307" y="26.666666666666671" width="51" height="31"/>
+                                                </switch>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mjR-sL-hWg">
+                                                    <rect key="frame" x="10" y="0.0" width="287" height="84"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mjR-sL-hWg" firstAttribute="top" secondItem="jl5-7f-kap" secondAttribute="top" id="1yu-Yl-h0J"/>
+                                                <constraint firstItem="Hg6-X4-2gc" firstAttribute="centerY" secondItem="jl5-7f-kap" secondAttribute="centerY" id="3Ia-c5-nI4"/>
+                                                <constraint firstItem="mjR-sL-hWg" firstAttribute="leading" secondItem="jl5-7f-kap" secondAttribute="leading" constant="10" id="R5W-WQ-I2x"/>
+                                                <constraint firstItem="Hg6-X4-2gc" firstAttribute="leading" secondItem="mjR-sL-hWg" secondAttribute="trailing" constant="10" id="Yae-U4-dGF"/>
+                                                <constraint firstAttribute="bottom" secondItem="mjR-sL-hWg" secondAttribute="bottom" id="bhZ-Sy-iBr"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hg6-X4-2gc" secondAttribute="trailing" constant="5" id="eH9-nn-46F"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="switchAnswer" destination="Hg6-X4-2gc" id="OJ4-TW-2cw"/>
+                                            <outlet property="textViewChoice" destination="mjR-sL-hWg" id="rQM-bS-Ghg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iIA-GS-N7A" id="cLz-aG-fBz"/>
+                                    <outlet property="delegate" destination="iIA-GS-N7A" id="EMZ-5h-JUU"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="DKd-yK-LyH">
+                                <rect key="frame" x="72" y="763.66666666666663" width="261.33333333333331" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF2-sp-EwW">
+                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Previous"/>
+                                        <connections>
+                                            <action selector="onClickPrevious" destination="iIA-GS-N7A" eventType="touchUpInside" id="jmC-ZT-ccK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaW-2y-hkc">
+                                        <rect key="frame" x="171.66666666666666" y="0.0" width="89.666666666666657" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                        <connections>
+                                            <action selector="onClickNext" destination="iIA-GS-N7A" eventType="touchUpInside" id="zGf-ie-aF0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d6P-ml-llz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zy6-FT-2Cg" firstAttribute="leading" secondItem="d6P-ml-llz" secondAttribute="leading" constant="16" id="3zD-0Z-GsF"/>
+                            <constraint firstItem="Zy6-FT-2Cg" firstAttribute="top" secondItem="d6P-ml-llz" secondAttribute="top" constant="20" id="9Ac-6r-API"/>
+                            <constraint firstItem="DKd-yK-LyH" firstAttribute="top" secondItem="Zy6-FT-2Cg" secondAttribute="bottom" constant="22.666666666666629" id="G2I-98-Qh7"/>
+                            <constraint firstItem="DKd-yK-LyH" firstAttribute="leading" secondItem="d6P-ml-llz" secondAttribute="leading" constant="72" id="Ogf-QZ-s7z"/>
+                            <constraint firstItem="d6P-ml-llz" firstAttribute="trailing" secondItem="Zy6-FT-2Cg" secondAttribute="trailing" constant="16" id="YZs-8x-ePo"/>
+                            <constraint firstItem="d6P-ml-llz" firstAttribute="trailing" secondItem="DKd-yK-LyH" secondAttribute="trailing" constant="59.666666666666686" id="fWQ-DU-ppV"/>
+                            <constraint firstItem="d6P-ml-llz" firstAttribute="bottom" secondItem="DKd-yK-LyH" secondAttribute="bottom" constant="20" id="ojA-S8-8re"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="O06-tX-6hd"/>
+                    <connections>
+                        <outlet property="buttonNextSubmit" destination="aaW-2y-hkc" id="ZoA-13-jKU"/>
+                        <outlet property="buttonPrevious" destination="AF2-sp-EwW" id="kqF-7p-9O3"/>
+                        <outlet property="tableViewQuiz" destination="Zy6-FT-2Cg" id="0vG-HL-egd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hL6-Xk-qPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="384"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
